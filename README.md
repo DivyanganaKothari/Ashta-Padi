@@ -286,8 +286,11 @@ This project demonstrates:
 ## 👥 Credits
 
 **Developed by:**
-- Divya Sharma - System Architecture & Development
-- [Acharya Name] - Sanskrit Content & Philological Annotations
+- Dr. Bhagyashree Joshi Vyasa - Sanskrit Content & Philological Annotations
+- Divyangana Kothari - System Architecture & Development
+- Bijay Laxmi Biswas - System Architecture & Development
+- Aarti Panwar - Researcher
+
 
 **For:** ISCLS 2026 Demo Submission
 
