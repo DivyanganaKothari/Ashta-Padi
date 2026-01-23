@@ -1,0 +1,30 @@
+# LaTeX auxiliary files
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+
+# Old diagram (we have the updated one)
+ashta_padi_model_1769080141861.png
+
+# Template sample file (not needed for demo)
+iscls-sample.tex
+
+# LaTeX template demo paper (keep only the simple version)
+ashta_padi_demo_paper.tex
+ashta_padi_demo_paper.log
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~

@@ -1,0 +1,492 @@
+{
+  "demo_info": {
+    "title": "Ashta Padi: Yoga Sutras Learning Demo",
+    "scripture": "Patanjali Yoga Sutras",
+    "section": "Samadhi Pada (Chapter 1)",
+    "target_audience": [
+      "Yoga Practitioners",
+      "Wellness Professionals",
+      "Philosophers",
+      "Psychologists"
+    ]
+  },
+  "vocabulary_prelearning": [
+    {
+      "id": 1,
+      "term": "योग",
+      "transliteration": "yoga",
+      "root": "युज् (yuj)",
+      "root_meaning": "to join, to unite",
+      "meanings": [
+        "union",
+        "discipline",
+        "practice",
+        "spiritual path"
+      ],
+      "part_of_speech": "noun (masculine)",
+      "example_usage": {
+        "sanskrit": "योगश्चित्तवृत्तिनिरोधः",
+        "translation": "Yoga is the cessation of mental fluctuations"
+      }
+    },
+    {
+      "id": 2,
+      "term": "चित्त",
+      "transliteration": "citta",
+      "root": "चित् (cit)",
+      "root_meaning": "to perceive, to be conscious",
+      "meanings": [
+        "mind-field",
+        "consciousness",
+        "mental substance"
+      ],
+      "part_of_speech": "noun (neuter)",
+      "example_usage": {
+        "sanskrit": "योगश्चित्तवृत्तिनिरोधः",
+        "translation": "Yoga is the cessation of mental fluctuations"
+      }
+    },
+    {
+      "id": 3,
+      "term": "वृत्ति",
+      "transliteration": "vṛtti",
+      "root": "वृत् (vṛt)",
+      "root_meaning": "to turn, to revolve",
+      "meanings": [
+        "fluctuation",
+        "modification",
+        "pattern",
+        "wave"
+      ],
+      "part_of_speech": "noun (feminine)",
+      "example_usage": {
+        "sanskrit": "वृत्तिसारूप्यमितरत्र",
+        "translation": "At other times, identification with the fluctuations"
+      }
+    },
+    {
+      "id": 4,
+      "term": "निरोध",
+      "transliteration": "nirodha",
+      "root": "नि + रुध् (rudh)",
+      "root_meaning": "to obstruct, to stop",
+      "meanings": [
+        "cessation",
+        "restraint",
+        "control"
+      ],
+      "part_of_speech": "noun (masculine)",
+      "example_usage": {
+        "sanskrit": "योगश्चित्तवृत्तिनिरोधः",
+        "translation": "Yoga is the cessation of mental fluctuations"
+      }
+    },
+    {
+      "id": 5,
+      "term": "द्रष्टृ",
+      "transliteration": "draṣṭṛ",
+      "root": "दृश् (dṛś)",
+      "root_meaning": "to see",
+      "meanings": [
+        "seer",
+        "witness",
+        "observer"
+      ],
+      "part_of_speech": "noun (masculine)",
+      "example_usage": {
+        "sanskrit": "तदा द्रष्टुः स्वरूपेऽवस्थानम्",
+        "translation": "Then the seer abides in its own true nature"
+      }
+    },
+    {
+      "id": 6,
+      "term": "स्वरूप",
+      "transliteration": "svarūpa",
+      "root": "स्व (sva) + रूप (rūpa)",
+      "root_meaning": "own + form",
+      "meanings": [
+        "own nature",
+        "true form",
+        "essence"
+      ],
+      "part_of_speech": "noun (neuter)",
+      "example_usage": {
+        "sanskrit": "द्रष्टुः स्वरूपेऽवस्थानम्",
+        "translation": "The seer abides in its own true nature"
+      }
+    }
+  ],
+  "sutras": [
+    {
+      "id": 1,
+      "number": "1.1",
+      "sanskrit": "अथ योगानुशासनम्",
+      "transliteration": "atha yogānuśāsanam",
+      "word_breakdown": [
+        {
+          "word": "अथ",
+          "transliteration": "atha",
+          "meaning": "now, thus, here begins",
+          "grammatical_info": "indeclinable particle"
+        },
+        {
+          "word": "योग",
+          "transliteration": "yoga",
+          "meaning": "union, discipline, practice",
+          "grammatical_info": "masculine noun, stem form"
+        },
+        {
+          "word": "अनुशासनम्",
+          "transliteration": "anuśāsanam",
+          "meaning": "instruction, teaching, exposition",
+          "grammatical_info": "neuter noun, nominative singular"
+        }
+      ],
+      "translation": "Now, the teaching of Yoga begins.",
+      "commentary": "This is the opening sutra, marking the auspicious beginning of the instruction on Yoga.",
+      "key_terms": [
+        "योग",
+        "अनुशासनम्"
+      ]
+    },
+    {
+      "id": 2,
+      "number": "1.2",
+      "sanskrit": "योगश्चित्तवृत्तिनिरोधः",
+      "transliteration": "yogaś-citta-vṛtti-nirodhaḥ",
+      "word_breakdown": [
+        {
+          "word": "योगः",
+          "transliteration": "yogaḥ",
+          "meaning": "yoga, union",
+          "grammatical_info": "masculine noun, nominative singular"
+        },
+        {
+          "word": "चित्त",
+          "transliteration": "citta",
+          "meaning": "mind, consciousness, mental field",
+          "grammatical_info": "neuter noun, stem form (in compound)"
+        },
+        {
+          "word": "वृत्ति",
+          "transliteration": "vṛtti",
+          "meaning": "fluctuations, modifications, patterns",
+          "grammatical_info": "feminine noun, stem form (in compound)"
+        },
+        {
+          "word": "निरोधः",
+          "transliteration": "nirodhaḥ",
+          "meaning": "cessation, restraint, control",
+          "grammatical_info": "masculine noun, nominative singular"
+        }
+      ],
+      "translation": "Yoga is the cessation of the fluctuations of the mind.",
+      "commentary": "This is the most famous sutra, defining the essence of Yoga practice.",
+      "key_terms": [
+        "योग",
+        "चित्त",
+        "वृत्ति",
+        "निरोध"
+      ]
+    },
+    {
+      "id": 3,
+      "number": "1.3",
+      "sanskrit": "तदा द्रष्टुः स्वरूपेऽवस्थानम्",
+      "transliteration": "tadā draṣṭuḥ svarūpe'vasthānam",
+      "word_breakdown": [
+        {
+          "word": "तदा",
+          "transliteration": "tadā",
+          "meaning": "then, at that time",
+          "grammatical_info": "indeclinable adverb"
+        },
+        {
+          "word": "द्रष्टुः",
+          "transliteration": "draṣṭuḥ",
+          "meaning": "of the seer, of the witness",
+          "grammatical_info": "masculine noun, genitive singular"
+        },
+        {
+          "word": "स्वरूपे",
+          "transliteration": "svarūpe",
+          "meaning": "in own nature, in true form",
+          "grammatical_info": "neuter noun, locative singular"
+        },
+        {
+          "word": "अवस्थानम्",
+          "transliteration": "avasthānam",
+          "meaning": "abiding, resting, establishment",
+          "grammatical_info": "neuter noun, nominative singular"
+        }
+      ],
+      "translation": "Then the seer abides in its own true nature.",
+      "commentary": "When the mind is still, the true Self is revealed.",
+      "key_terms": [
+        "द्रष्टुः",
+        "स्वरूप",
+        "अवस्थानम्"
+      ]
+    },
+    {
+      "id": 4,
+      "number": "1.4",
+      "sanskrit": "वृत्तिसारूप्यमितरत्र",
+      "transliteration": "vṛtti-sārūpyam-itaratra",
+      "word_breakdown": [
+        {
+          "word": "वृत्ति",
+          "transliteration": "vṛtti",
+          "meaning": "fluctuations, modifications",
+          "grammatical_info": "feminine noun, stem form (in compound)"
+        },
+        {
+          "word": "सारूप्यम्",
+          "transliteration": "sārūpyam",
+          "meaning": "identification, conformity, taking the form of",
+          "grammatical_info": "neuter noun, nominative singular"
+        },
+        {
+          "word": "इतरत्र",
+          "transliteration": "itaratra",
+          "meaning": "at other times, otherwise",
+          "grammatical_info": "indeclinable adverb"
+        }
+      ],
+      "translation": "At other times, there is identification with the fluctuations.",
+      "commentary": "When not in the state of Yoga, consciousness identifies with mental patterns.",
+      "key_terms": [
+        "वृत्ति",
+        "सारूप्यम्"
+      ]
+    },
+    {
+      "id": 5,
+      "number": "1.5",
+      "sanskrit": "वृत्तयः पञ्चतय्यः क्लिष्टाक्लिष्टाः",
+      "transliteration": "vṛttayaḥ pañcatayyaḥ kliṣṭākliṣṭāḥ",
+      "word_breakdown": [
+        {
+          "word": "वृत्तयः",
+          "transliteration": "vṛttayaḥ",
+          "meaning": "fluctuations, modifications",
+          "grammatical_info": "feminine noun, nominative plural"
+        },
+        {
+          "word": "पञ्चतय्यः",
+          "transliteration": "pañcatayyaḥ",
+          "meaning": "fivefold, of five kinds",
+          "grammatical_info": "adjective, nominative plural"
+        },
+        {
+          "word": "क्लिष्टाः",
+          "transliteration": "kliṣṭāḥ",
+          "meaning": "afflicted, painful",
+          "grammatical_info": "adjective, nominative plural"
+        },
+        {
+          "word": "अक्लिष्टाः",
+          "transliteration": "akliṣṭāḥ",
+          "meaning": "non-afflicted, non-painful",
+          "grammatical_info": "adjective, nominative plural"
+        }
+      ],
+      "translation": "The fluctuations are of five kinds, either afflicted or non-afflicted.",
+      "commentary": "This sutra introduces the classification of mental modifications.",
+      "key_terms": [
+        "वृत्ति",
+        "पञ्चतय्य",
+        "क्लिष्ट",
+        "अक्लिष्ट"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "योग",
+      "transliteration": "yoga",
+      "meanings": [
+        "union",
+        "discipline",
+        "practice",
+        "method"
+      ],
+      "root": "युज् (yuj - to join, unite)",
+      "part_of_speech": "masculine noun",
+      "difficulty": "beginner",
+      "usage_count": 2,
+      "related_terms": [
+        "युज्",
+        "योगिन्",
+        "योगिनी"
+      ]
+    },
+    {
+      "term": "चित्त",
+      "transliteration": "citta",
+      "meanings": [
+        "mind",
+        "consciousness",
+        "mental field",
+        "psyche"
+      ],
+      "root": "चित् (cit - to perceive, think)",
+      "part_of_speech": "neuter noun",
+      "difficulty": "beginner",
+      "usage_count": 1,
+      "related_terms": [
+        "चित्",
+        "चेतना",
+        "चैतन्य"
+      ]
+    },
+    {
+      "term": "वृत्ति",
+      "transliteration": "vṛtti",
+      "meanings": [
+        "fluctuation",
+        "modification",
+        "pattern",
+        "wave"
+      ],
+      "root": "वृत् (vṛt - to turn, revolve)",
+      "part_of_speech": "feminine noun",
+      "difficulty": "intermediate",
+      "usage_count": 3,
+      "related_terms": [
+        "वृत्",
+        "प्रवृत्ति",
+        "निवृत्ति"
+      ]
+    },
+    {
+      "term": "निरोध",
+      "transliteration": "nirodha",
+      "meanings": [
+        "cessation",
+        "restraint",
+        "control",
+        "stopping"
+      ],
+      "root": "रुध् (rudh - to obstruct) with नि prefix",
+      "part_of_speech": "masculine noun",
+      "difficulty": "intermediate",
+      "usage_count": 1,
+      "related_terms": [
+        "रुध्",
+        "रोध",
+        "अवरोध"
+      ]
+    },
+    {
+      "term": "द्रष्टृ",
+      "transliteration": "draṣṭṛ",
+      "meanings": [
+        "seer",
+        "witness",
+        "observer",
+        "perceiver"
+      ],
+      "root": "दृश् (dṛś - to see)",
+      "part_of_speech": "masculine noun (agent noun)",
+      "difficulty": "intermediate",
+      "usage_count": 1,
+      "related_terms": [
+        "दृश्",
+        "दर्शन",
+        "दृष्टि"
+      ]
+    },
+    {
+      "term": "स्वरूप",
+      "transliteration": "svarūpa",
+      "meanings": [
+        "own nature",
+        "true form",
+        "essence",
+        "inherent nature"
+      ],
+      "root": "स्व (sva - own) + रूप (rūpa - form)",
+      "part_of_speech": "neuter noun (compound)",
+      "difficulty": "beginner",
+      "usage_count": 1,
+      "related_terms": [
+        "स्व",
+        "रूप",
+        "स्वभाव"
+      ]
+    }
+  ],
+  "grammar_lessons": [
+    {
+      "id": 1,
+      "title": "Sandhi: Vowel Combinations",
+      "concept": "When two vowels meet at word boundaries, they combine according to specific rules.",
+      "examples": [
+        {
+          "rule": "a/ā + a/ā = ā",
+          "example": "योग + अनुशासनम् = योगानुशासनम्",
+          "explanation": "The 'a' at the end of 'yoga' combines with the 'a' at the beginning of 'anuśāsanam' to form 'ā'"
+        },
+        {
+          "rule": "a/ā + i/ī = e",
+          "example": "योग + इति = योगेति",
+          "explanation": "When 'a' meets 'i', they combine to form 'e'"
+        }
+      ],
+      "quiz": [
+        {
+          "question": "What is the sandhi of 'चित्त + उत्थान'?",
+          "options": [
+            "चित्तुत्थान",
+            "चित्तोत्थान",
+            "चित्तौत्थान"
+          ],
+          "correct": 1,
+          "explanation": "a + u = o, so चित्त + उत्थान = चित्तोत्थान"
+        },
+        {
+          "question": "Break the sandhi: योगानुशासनम्",
+          "options": [
+            "योग + अनुशासनम्",
+            "योगा + नुशासनम्",
+            "योगान् + उशासनम्"
+          ],
+          "correct": 0,
+          "explanation": "The long ā is formed from a + a"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Compound Words (Samāsa)",
+      "concept": "Sanskrit frequently combines words to form compounds. Understanding the components helps in translation.",
+      "examples": [
+        {
+          "compound": "चित्तवृत्ति",
+          "breakdown": "चित्त + वृत्ति",
+          "type": "Tatpurusha (determinative compound)",
+          "meaning": "fluctuations of the mind (mind's fluctuations)"
+        },
+        {
+          "compound": "स्वरूप",
+          "breakdown": "स्व + रूप",
+          "type": "Tatpurusha",
+          "meaning": "own form (one's own nature)"
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Break down the compound: चित्तवृत्तिनिरोध",
+          "options": [
+            "चित्त + वृत्ति + निरोध",
+            "चित्तवृत्ति + निरोध",
+            "Both are valid ways to analyze it"
+          ],
+          "correct": 2,
+          "explanation": "Compounds can be analyzed at different levels: as three separate words or as a compound + word"
+        }
+      ]
+    }
+  ]
+}

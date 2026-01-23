@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashta Padi - Yoga Sutras Learning Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Welcome Screen -->
+    <div id="welcomeScreen" class="screen active">
+        <div class="container">
+            <div class="hero">
+                <h1 class="logo">अष्टपदी</h1>
+                <h2 class="subtitle">Ashta Padi</h2>
+                <p class="tagline">Personalized Sanskrit Scripture Learning</p>
+
+                <div class="feature-cards">
+                    <div class="feature-card">
+                        <div class="feature-icon">🎯</div>
+                        <h3>Profession-Based</h3>
+                        <p>Learn Sanskrit terms relevant to your field</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📚</div>
+                        <h3>Scripture-Based</h3>
+                        <p>Learn from authentic ancient texts</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">✍️</div>
+                        <h3>Grammar Support</h3>
+                        <p>Comprehensive grammar lessons alongside sutras</p>
+                    </div>
+                </div>
+
+                <div class="demo-info">
+                    <h3>Demo: Patanjali Yoga Sutras</h3>
+                    <p>Experience the first chapter (Samadhi Pada) with interactive word-by-word analysis</p>
+                </div>
+
+                <button class="btn-primary" onclick="showProfessionSelection()">
+                    Begin Learning Journey →
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Profession Selection Screen -->
+    <div id="professionScreen" class="screen">
+        <div class="container">
+            <div class="content-box">
+                <h2>Select Your Interest Area</h2>
+                <p class="subtitle-text">We'll personalize your learning experience based on your background</p>
+
+                <div class="profession-grid">
+                    <div class="profession-card" onclick="selectProfession('yoga')">
+                        <div class="profession-icon">🧘</div>
+                        <h3>Yoga Practitioner</h3>
+                        <p>Deepen your understanding of yoga philosophy</p>
+                    </div>
+                    <div class="profession-card" onclick="selectProfession('economist')">
+                        <div class="profession-icon">💼</div>
+                        <h3>Economist/Accountant</h3>
+                        <p>Explore ancient wisdom on economics and governance</p>
+                        <span class="coming-soon">Coming Soon</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Vocabulary Pre-Learning Screen -->
+    <div id="vocabularyIntroScreen" class="screen">
+        <div class="container">
+            <div class="content-box">
+                <h2>Learn Key Vocabulary First</h2>
+                <p class="subtitle-text">Build familiarity with essential terms before studying the sutras</p>
+
+                <div class="vocab-flashcard">
+                    <div class="flashcard-header">
+                        <span class="term-counter">Term <span id="currentTermNum">1</span> of 6</span>
+                    </div>
+
+                    <div class="flashcard-content">
+                        <div class="sanskrit-term" id="vocabTerm">योग</div>
+                        <div class="transliteration" id="vocabTranslit">yoga</div>
+
+                        <div class="vocab-details">
+                            <div class="vocab-section">
+                                <h4>Root</h4>
+                                <p id="vocabRoot">युज् (yuj) - "to join, to unite"</p>
+                            </div>
+
+                            <div class="vocab-section">
+                                <h4>Meanings</h4>
+                                <ul id="vocabMeanings">
+                                    <li>union, connection</li>
+                                    <li>discipline, practice</li>
+                                    <li>spiritual path</li>
+                                </ul>
+                            </div>
+
+                            <div class="vocab-section">
+                                <h4>Example Usage</h4>
+                                <div class="example-box">
+                                    <p class="sanskrit-text" id="vocabExample">योगश्चित्तवृत्तिनिरोधः</p>
+                                    <p class="translation" id="vocabExampleTrans">"Yoga is the cessation of mental fluctuations"</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flashcard-nav">
+                        <button class="btn-secondary" id="vocabPrevBtn" onclick="previousVocabTerm()" disabled>
+                            ← Previous
+                        </button>
+                        <button class="btn-primary" id="vocabNextBtn" onclick="nextVocabTerm()">
+                            Next →
+                        </button>
+                    </div>
+                </div>
+
+                <div class="progress-dots" id="vocabProgressDots"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sutra Learning Screen with Grammar Sidebar -->
+    <div id="sutraScreen" class="screen">
+        <div class="nav-header">
+            <div class="container">
+                <div class="nav-content">
+                    <button class="btn-home" onclick="goHome()">← Back to Home</button>
+                    <h2 class="nav-title">Yoga Sutras - Samadhi Pada</h2>
+                    <div class="progress-info">
+                        <span id="sutraProgress">Sutra 1 of 5</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container main-content dual-panel">
+            <!-- LEFT PANEL: Sutra Learning -->
+            <div class="sutra-panel">
+                <div class="sutra-display">
+                    <div class="sutra-number" id="sutraNumber">1.1</div>
+
+                    <div class="sutra-text-box">
+                        <div class="sanskrit-text" id="sanskritText">अथ योगानुशासनम्</div>
+                        <div class="transliteration" id="transliteration">atha yogānuśāsanam</div>
+                    </div>
+
+                    <div class="translation-box">
+                        <h3>Translation</h3>
+                        <p id="translation">Now, the teaching of Yoga begins.</p>
+                    </div>
+
+                    <div class="commentary-box">
+                        <h3>Commentary</h3>
+                        <p id="commentary">This is the opening sutra, marking the auspicious beginning of the instruction on Yoga.</p>
+                    </div>
+
+                    <div class="word-breakdown-section">
+                        <h3>Word-by-Word Analysis</h3>
+                        <div class="breakdown-toggle">
+                            <button class="toggle-btn active" onclick="showBreakdown()">Show Breakdown</button>
+                        </div>
+                        <div id="wordBreakdown" class="word-breakdown"></div>
+                    </div>
+
+                    <div class="navigation-buttons">
+                        <button class="btn-secondary" id="prevBtn" onclick="previousSutra()" disabled>
+                            ← Previous Sutra
+                        </button>
+                        <button class="btn-primary" id="nextBtn" onclick="nextSutra()">
+                            Next Sutra →
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT PANEL: Grammar Lessons -->
+            <div class="grammar-panel">
+                <div class="grammar-header">
+                    <h3>📚 Grammar Reference</h3>
+                    <p class="grammar-subtitle">Click to expand lessons</p>
+                </div>
+
+                <div class="grammar-accordion" id="grammarAccordion">
+                    <!-- Grammar lessons will be loaded here -->
+                </div>
+
+                <div class="sidebar-card">
+                    <h3>🎯 Your Progress</h3>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <span class="stat-value" id="sutrasCompleted">0</span>
+                            <span class="stat-label">Sutras Completed</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value" id="termsLearned">6</span>
+                            <span class="stat-label">Terms Learned</span>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn-primary full-width" onclick="showQuiz()" style="margin-top: 20px;">
+                    Take Practice Test →
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Practice Quiz Screen -->
+    <div id="quizScreen" class="screen">
+        <div class="container">
+            <div class="content-box">
+                <h2>Practice Test</h2>
+                <p class="subtitle-text">Test your understanding of vocabulary and grammar</p>
+
+                <div class="quiz-container">
+                    <div class="quiz-progress">
+                        <span id="quizProgress">Question 1 of 10</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="quizProgressFill"></div>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question" id="quizQuestion">
+                        <h3 id="questionText">What does 'योग' (yoga) mean?</h3>
+                        <div class="quiz-options" id="quizOptions">
+                            <!-- Options will be loaded here -->
+                        </div>
+                    </div>
+
+                    <div class="quiz-feedback" id="quizFeedback" style="display: none;">
+                        <!-- Feedback will appear here -->
+                    </div>
+
+                    <div class="quiz-nav">
+                        <button class="btn-secondary" id="quizPrevBtn" onclick="previousQuestion()" disabled>
+                            ← Previous
+                        </button>
+                        <button class="btn-primary" id="quizNextBtn" onclick="nextQuestion()">
+                            Next →
+                        </button>
+                    </div>
+                </div>
+
+                <div class="quiz-results" id="quizResults" style="display: none;">
+                    <h2>Test Complete!</h2>
+                    <div class="score-display">
+                        <div class="score-circle">
+                            <span class="score-value" id="finalScore">0</span>
+                            <span class="score-label">/ 10</span>
+                        </div>
+                    </div>
+                    <p id="scoreMessage"></p>
+                    <div class="results-actions">
+                        <button class="btn-primary" onclick="retakeQuiz()">Retake Test</button>
+                        <button class="btn-secondary" onclick="goHome()">Back to Home</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
