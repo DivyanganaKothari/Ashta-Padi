@@ -396,7 +396,15 @@ function renderSutra() {
 
     // Update navigation buttons
     document.getElementById('prevBtn').disabled = appState.currentSutraIndex === 0;
-    document.getElementById('nextBtn').disabled = appState.currentSutraIndex === appState.sutraData.length - 1;
+
+    const nextBtn = document.getElementById('nextBtn');
+    if (appState.currentSutraIndex === appState.sutraData.length - 1) {
+        nextBtn.textContent = 'Finish Learning →';
+        nextBtn.disabled = false;
+    } else {
+        nextBtn.textContent = 'Next →';
+        nextBtn.disabled = false;
+    }
 
     // Update progress
     updateProgress();
@@ -443,11 +451,18 @@ function previousSutra() {
 }
 
 function nextSutra() {
-    // Fix: Allow moving if index is less than length - 1
     if (appState.currentSutraIndex < appState.sutraData.length - 1) {
         appState.sutrasCompleted.add(appState.currentSutraIndex);
         appState.currentSutraIndex++;
         renderSutra();
+    } else {
+        // Mark the last sutra as completed
+        appState.sutrasCompleted.add(appState.currentSutraIndex);
+        updateProgress();
+
+        // Show completion message
+        alert("🎉 Congratulations! You have completed the Sutra reading. Now let's test your knowledge!");
+        showQuiz();
     }
 }
 
@@ -563,19 +578,61 @@ const quizQuestions = [
         question: "What does 'योग' (yoga) mean?",
         options: ["Sleep", "Union, discipline", "Food", "Water"],
         correct: 1,
-        explanation: "योग (yoga) comes from the root युज् (yuj) meaning 'to join'."
+        explanation: "योग (yoga) comes from the root युज् (yuj) meaning 'to join' or 'to unite'."
     },
     {
         question: "What does 'चित्त' (citta) refer to?",
         options: ["Body", "Mind-field, consciousness", "Breath", "Soul"],
         correct: 1,
-        explanation: "चित्त (citta) refers to the mind-field or consciousness."
+        explanation: "चित्त (citta) refers to the mind-field or consciousness, which includes thoughts, emotions, and memory."
     },
     {
         question: "What does 'निरोध' (nirodha) mean?",
         options: ["Movement", "Cessation, restraint", "Beginning", "Expansion"],
         correct: 1,
-        explanation: "निरोध (nirodha) means cessation or restraint."
+        explanation: "निरोध (nirodha) means cessation, restraint, or stilling of the mind's fluctuations."
+    },
+    {
+        question: "In the sandhi: योग + अनुशासनम् = योगानुशासनम्, what rule is applied?",
+        options: ["a + i = e", "a + a = ā", "a + u = o", "visarga sandhi"],
+        correct: 1,
+        explanation: "When a short 'a' is followed by another short 'a', they combine to form a long 'ā' (Savarna Dirgha Sandhi)."
+    },
+    {
+        question: "The term 'द्रष्टृ' (draṣṭṛ) refers to:",
+        options: ["The Seen (Object)", "The Seer (Subject)", "The Process of Seeing", "The Eye"],
+        correct: 1,
+        explanation: "द्रष्टृ (draṣṭṛ) is the 'Seer' or the Witness consciousness (Purusha)."
+    },
+    {
+        question: "What does 'वृत्ति' (vṛtti) mean?",
+        options: ["Silence", "Fluctuation, modification", "Study", "Posture"],
+        correct: 1,
+        explanation: "वृत्ति (vṛtti) refers to the fluctuations, modifications, or waves in the mind-field."
+    },
+    {
+        question: "Which case (Vibhakti) usually indicates 'possession' or 'relationship' (of)?",
+        options: ["Prathamā (1st)", "Dvitīyā (2nd)", "Ṣaṣṭhī (6th)", "Saptamī (7th)"],
+        correct: 2,
+        explanation: "The Ṣaṣṭhī (6th) case, or Genitive case, indicates possession or relationship (e.g., Rama's)."
+    },
+    {
+        question: "What does the root 'दृश्' (dṛś) mean?",
+        options: ["To do", "To go", "To see", "To speak"],
+        correct: 2,
+        explanation: "The root दृश् (dṛś) means 'to see', from which words like द्रष्टृ (seer) and दर्शन (sight/philosophy) are derived."
+    },
+    {
+        question: "How many chapters (Padas) are there in the Yoga Sutras?",
+        options: ["Two", "Four", "Eight", "Ten"],
+        correct: 1,
+        explanation: "The Yoga Sutras are divided into four chapters (Padas): Samadhi, Sadhana, Vibhuti, and Kaivalya."
+    },
+    {
+        question: "Who is the traditional author of the Yoga Sutras?",
+        options: ["Vyasa", "Patanjali", "Shankaracharya", "Kapila"],
+        correct: 1,
+        explanation: "Maharishi Patanjali is the traditional compiler/author of the Yoga Sutras."
     }
 ];
 
@@ -663,7 +720,21 @@ function showQuizResults() {
     });
 
     document.getElementById('finalScore').textContent = score;
-    document.getElementById('scoreMessage').textContent = score === quizQuestions.length ? "Perfect Score! You are ready for the next step." : "Good job! Keep practicing.";
+
+    // Passing score logic (7 out of 10)
+    const passingScore = 7;
+    const proceedBtn = document.getElementById('proceedToMentorBtn');
+    const messageEl = document.getElementById('scoreMessage');
+
+    if (score >= passingScore) {
+        messageEl.innerHTML = `🎉 <strong>Excellent! You scored ${score}/10.</strong><br>You have passed the test and qualified for Step 3: Mentor Selection.`;
+        messageEl.style.color = '#2e7d32'; // Green
+        if (proceedBtn) proceedBtn.style.display = 'inline-block';
+    } else {
+        messageEl.innerHTML = `📚 <strong>You scored ${score}/10.</strong><br>You need at least ${passingScore}/10 to proceed to the next step.<br>Please examine the explanations for incorrect answers and try again.`;
+        messageEl.style.color = '#d32f2f'; // Red
+        if (proceedBtn) proceedBtn.style.display = 'none';
+    }
 }
 
 function retakeQuiz() {
