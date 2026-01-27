@@ -1,3 +1,12 @@
+# LaTeX and PDF files (paper files - not for demo)
+*.tex
+*.pdf
+*.bbl
+*.blg
+*.sty
+*.bst
+*.bib
+
 # LaTeX auxiliary files
 *.aux
 *.log
@@ -6,6 +15,9 @@
 *.synctex.gz
 *.fls
 *.fdb_latexmk
+
+# Debug files
+debug.html
 
 # Old diagram (we have the updated one)
 ashta_padi_model_1769080141861.png

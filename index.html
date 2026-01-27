@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ashta Padi - Yoga Sutras Learning Platform</title>
+    <title>Ashta Padi - Sanskrit Scripture Learning Framework</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -111,7 +111,8 @@
                                 <h4>Example Usage</h4>
                                 <div class="example-box">
                                     <p class="sanskrit-text" id="vocabExample">योगश्चित्तवृत्तिनिरोधः</p>
-                                    <p class="translation" id="vocabExampleTrans">"Yoga is the cessation of mental fluctuations"</p>
+                                    <p class="translation" id="vocabExampleTrans">"Yoga is the cessation of mental
+                                        fluctuations"</p>
                                 </div>
                             </div>
                         </div>
@@ -167,7 +168,8 @@
 
                     <div class="commentary-box">
                         <h3>Commentary</h3>
-                        <p id="commentary">This is the opening sutra, marking the auspicious beginning of the instruction on Yoga.</p>
+                        <p id="commentary">This is the opening sutra, marking the auspicious beginning of the
+                            instruction on Yoga.</p>
                     </div>
 
                     <div class="word-breakdown-section">
@@ -268,6 +270,8 @@
                     <p id="scoreMessage"></p>
                     <div class="results-actions">
                         <button class="btn-primary" onclick="retakeQuiz()">Retake Test</button>
+                        <button class="btn-primary" onclick="showMentorSelection()">Proceed to Mentorship (Step
+                            3)</button>
                         <button class="btn-secondary" onclick="goHome()">Back to Home</button>
                     </div>
                 </div>
@@ -275,7 +279,101 @@
         </div>
     </div>
 
-    <script src="app.js"></script>
+    <!-- Mentor Selection Screen (Step 3) -->
+    <div id="mentorScreen" class="screen">
+        <div class="container">
+            <div class="content-box">
+                <h2>Step 3: Mentor Selection</h2>
+                <p class="subtitle-text">Choose an academic mentor for live weekly/monthly Q&A sessions</p>
+
+                <div class="mentor-grid">
+                    <div class="mentor-card" onclick="selectMentor('Prof. Srinivas Varkhedi')">
+                        <div class="mentor-avatar">👨‍🏫</div>
+                        <h3>Prof. Srinivas Varkhedi</h3>
+                        <p class="mentor-role">Vice Chancellor, CSU</p>
+                        <p class="mentor-expertise">Expertise: Nyaya, Vyakarana</p>
+                        <button class="btn-secondary btn-sm">Select for Live Q&A</button>
+                    </div>
+                    <div class="mentor-card" onclick="selectMentor('Prof. Gauri Mahulikar')">
+                        <div class="mentor-avatar">👩‍🏫</div>
+                        <h3>Prof. Gauri Mahulikar</h3>
+                        <p class="mentor-role">Academic Director, CIF</p>
+                        <p class="mentor-expertise">Expertise: Vedic Literature</p>
+                        <button class="btn-secondary btn-sm">Select for Live Q&A</button>
+                    </div>
+                    <div class="mentor-card" onclick="selectMentor('Prof. Anuradha Chaudhary')">
+                        <div class="mentor-avatar">👩‍🏫</div>
+                        <h3>Prof. Anuradha Chaudhary</h3>
+                        <p class="mentor-role">Coordinator, IKS Division</p>
+                        <p class="mentor-expertise">Expertise: Indian Psychology</p>
+                        <button class="btn-secondary btn-sm">Select for Live Q&A</button>
+                    </div>
+                    <div class="mentor-card" onclick="selectMentor('Prof. Amba Kulkarni')">
+                        <div class="mentor-avatar">👩‍🏫</div>
+                        <h3>Prof. Amba Kulkarni</h3>
+                        <p class="mentor-role">Head, Dept of Sanskrit Studies</p>
+                        <p class="mentor-expertise">Expertise: Computational Linguistics</p>
+                        <button class="btn-secondary btn-sm">Select for Live Q&A</button>
+                    </div>
+                    <div class="mentor-card" onclick="selectMentor('Prof. Malhar Kulkarni')">
+                        <div class="mentor-avatar">👨‍🏫</div>
+                        <h3>Prof. Malhar Kulkarni</h3>
+                        <p class="mentor-role">Professor, IIT Bombay</p>
+                        <p class="mentor-expertise">Expertise: Paninian Grammar</p>
+                        <button class="btn-secondary btn-sm">Select for Live Q&A</button>
+                    </div>
+                </div>
+
+                <div style="margin-top: 30px; text-align: center;">
+                    <button class="btn-secondary" onclick="goHome()">Back to Home</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ecosystem Integration Layer (Grammarly-like) -->
+    <div class="integration-fab" onclick="toggleToolsPanel()" title="Sanskrit Learning Tools">
+        <span class="fab-icon">🕉️</span>
+        <span class="fab-badge">Tools</span>
+    </div>
+
+    <div class="integration-panel" id="toolsPanel">
+        <div class="panel-header">
+            <h3>Sanskrit Ecosystem</h3>
+            <button class="close-panel" onclick="toggleToolsPanel()">×</button>
+        </div>
+        <div class="panel-content">
+            <div class="tool-item">
+                <div class="tool-icon">📖</div>
+                <div class="tool-details">
+                    <h4>Cologne Dictionary</h4>
+                    <p>Instant definition lookup</p>
+                    <span class="status-badge">Connected</span>
+                </div>
+            </div>
+            <div class="tool-item">
+                <div class="tool-icon">⚙️</div>
+                <div class="tool-details">
+                    <h4>Sanskrit Heritage</h4>
+                    <p>Morphological Analyzer</p>
+                    <span class="status-badge">Connected</span>
+                </div>
+            </div>
+            <div class="tool-item">
+                <div class="tool-icon">✍️</div>
+                <div class="tool-details">
+                    <h4>Grammar Assist</h4>
+                    <p>Real-time Sandhi checker</p>
+                    <span class="status-badge active">Active</span>
+                </div>
+            </div>
+            <div class="integration-message">
+                <p><i>Like "Grammarly for Sanskrit"</i><br>Context-aware assistance enabled across all learning modules.
+                </p>
+            </div>
+        </div>
+
+        <script src="app.js"></script>
 </body>
 
 </html>

@@ -2,7 +2,9 @@
 
 ## 🎯 Overview
 
-**Ashta Padi** (अष्टपदी - "Eight Steps") is a comprehensive university-integrated learning framework for Indian scriptures that combines profession-based personalization with formal certification pathways. This demo showcases the foundational steps (1-3) using Patanjali's Yoga Sutras.
+**Ashta Padi** (अष्टपदी - "Eight Steps") is a comprehensive university-integrated learning framework for **Sanskrit scriptures** that combines profession-based personalization with formal certification pathways. 
+
+**The framework is scripture-agnostic**—it works with any Sanskrit text (Bhagavad Gita, Upanishads, Brahma Sutras, Arthashastra, etc.). **This demo uses Patanjali's Yoga Sutras as an exemplar** due to its relevance across multiple professions and rich grammatical content.
 
 **Demo for:** ISCLS 2026 (8th International Sanskrit Computational Linguistics Symposium)  
 **Submission Deadline:** January 31, 2026
