@@ -210,40 +210,6 @@ Each lesson includes:
 
 ---
 
-## 🔧 Customization
-
-### **Adding More Sutras**
-Edit `yoga_sutras_demo_data.json` and add to the `sutras` array:
-
-```json
-{
-  "id": 6,
-  "number": "1.6",
-  "sanskrit": "प्रमाणविपर्ययविकल्पनिद्रास्मृतयः",
-  "transliteration": "pramāṇa-viparyaya-vikalpa-nidrā-smṛtayaḥ",
-  "word_breakdown": [...],
-  "translation": "...",
-  "commentary": "...",
-  "key_terms": [...]
-}
-```
-
-### **Adding Vocabulary**
-Add to the `vocabulary` array in the JSON file.
-
-### **Changing Colors**
-Edit CSS variables in `styles.css`:
-
-```css
-:root {
-    --primary: #8B4513;        /* Saddle brown */
-    --accent: #DAA520;         /* Goldenrod */
-    --sanskrit: #8B0000;       /* Dark red for Sanskrit text */
-    /* ... more colors */
-}
-```
-
----
 
 ## 🎓 Research Contributions
 
@@ -258,7 +224,7 @@ This project demonstrates:
 
 ---
 
-## 📝 Technical Stack
+## 📝 Technical Stack for Demo
 
 - **Frontend**: HTML5, CSS3, JavaScript (Vanilla)
 - **Fonts**: Google Fonts (Inter, Noto Sans Devanagari)
