@@ -267,7 +267,7 @@ This project demonstrates:
 ## 📧 Contact
 
 For questions or feedback:
-- Email: divyangana.kothari@domain.com
+- Email: divikot.de@gmail.com
 - Conference: iscls@outlook.com
 
 ---
