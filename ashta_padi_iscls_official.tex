@@ -1,0 +1,92 @@
+\documentclass[11pt]{article}
+\usepackage{scl}
+\usepackage{times}
+\usepackage{url}
+\usepackage{latexsym}
+\usepackage{graphicx}
+
+\setlength\titlebox{6cm}
+
+\title{Ashta-Padi: A Profession-Based Framework for Sanskrit and Scriptural Learning \\ (Demo Paper)}
+
+\author{
+\begin{tabular}{c @{\hspace{1.5cm}} c}
+\begin{minipage}[t]{0.45\textwidth}\centering
+\textbf{P1:} Bhagyashree Joshi Vyasa \\[0.3em]
+{\small Satyam Sadhana Kutir Ashram} \\[0.2em]
+{\footnotesize \tt emailbhagyashreejoshi@gmail.com}
+\vspace{0.4em}
+\end{minipage}
+&
+\begin{minipage}[t]{0.45\textwidth}\centering
+\textbf{P2:} Divyangana Kothari \\[0.3em]
+{\small Satyam Sadhana Kutir Ashram} \\[0.2em]
+{\footnotesize \tt divikot.de@gmail.com}
+\vspace{0.4em}
+\end{minipage}
+\\[1em]
+\begin{minipage}[t]{0.45\textwidth}\centering
+\textbf{P2:} Bijoy Laxmi Biswas \\[0.3em]
+{\small Satyam Sadhana Kutir Ashram} \\[0.2em]
+{\footnotesize \tt bijay.official8@gmail.com}
+\end{minipage}
+&
+\begin{minipage}[t]{0.45\textwidth}\centering
+\textbf{P3:} Aarti Panwar \\[0.3em]
+{\small Uttarakhand Sanskrit University} \\[0.2em]
+{\footnotesize \tt aartipanwar283@gmail.com}
+\end{minipage}
+\end{tabular}
+}
+
+\date{}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+We present \textit{Ashta-Padi}, a profession-based framework for Sanskrit and scriptural learning integrating personalized vocabulary acquisition, grammar grounding, and structured certification progression. Unlike existing tools focused on textual analysis, \textit{Ashta-Padi} emphasizes learner onboarding and pedagogical progression. This demo implements Steps~1--3 using the \textit{Yoga S\=utras} as an exemplar, allowing users to select professions, interact with domain-relevant Sanskrit vocabulary, and study scripture passages through a dual-panel interface with contextual grammar, including word-level explanations and progress tracking.
+\end{abstract}
+
+\section{Introduction}
+Sanskrit scriptures form the foundation of Indian philosophy and contemplative traditions. Despite their significance, systematic study remains inaccessible due to linguistic complexity and lack of structured pathways. Existing digital Sanskrit tools mainly support linguistic analysis or text search and offer limited learner-oriented guidance \cite{huet2003zen,goyal2012sanskrit}.
+
+\textit{Ashta-Padi} addresses this gap by connecting Sanskrit learning with learners' professional contexts. By grounding vocabulary in familiar domains, the framework lowers entry barriers while preserving grammatical rigor. This model also connects the learner and higher education institutes digitally and presents formal certification upon exit from certificate to degree courses. The model allows ease and flexibility of decision making to the learner and facilitates continuous exposure to Sanskrit as a language and foundation for their subject specific learning interest. This demo shows how the interface can support structured interest-based Sanskrit learning without replacing traditional scholarship.
+
+\section{The Ashta-Padi Framework}
+\textit{Ashta-Padi} defines an eight-stage progression from introductory exposure to advanced scholarship. While pedagogical in scope, the framework relies on computational mappings between professions, vocabulary sets, and grammatical concepts. The core objectives targeted in this demo are:
+
+\begin{description}
+    \item[\textbf{Domain-Centric Lexical Mapping:}] To implement a computational mapping between professional taxonomies and scriptural vocabulary, enabling personalized onboarding (Step 1).
+    \item[\textbf{Context-Synchronized Morphological Analysis:}] To develop a dual-panel system that exposes word-level grammar and commentary in direct alignment with scriptural passages (Step 2).
+    \item[\textbf{Systematic Progress Validation:}] To provide an integrated workflow for knowledge verification and mentorship selection, ensuring a structured transition from self-study to guided scholarship (Step 3).
+\end{description}
+
+\section{System Architecture and Demo Implementation}
+The \textit{Ashta-Padi} system architecture employs a modular, layered approach comprising four distinct layers: (1) \textbf{Content Layer} powered by strongly-typed TypeScript modules mapping Sanskrit texts to morphological markers and profession-specific vocabulary; (2) \textbf{Pedagogy Layer} implementing a gated progression engine with state management for profession-based filtering and completion tracking; (3) \textbf{Presentation Layer} providing a dual-panel synchronized interface with word-level analysis and contextual grammar references; and (4) \textbf{Role Layer} supporting distinct dashboards for teachers (Guru) and students (Śiṣya).
+
+\subsection{Demo Scope}
+The live demo implements Steps~1--3 using the \textit{Yoga S\=utras, Sam\=adhi P\=ada}. Key features include:
+
+\begin{itemize}
+\item Profession-aware vocabulary presentation and progress tracking, enabling learners to anchor Sanskrit terminology within a familiar professional context.
+\item A dual-panel learning interface presenting S\=utra text in Devanagari with transliteration, translation, and commentary, alongside expandable contextual grammar references.
+\item Guided learning support mechanisms, illustrating how grammar concepts such as sandhi, pada, and varṇa are introduced in direct relation to scripture usage alongside, workflow to choose learning from traditional mentors for live weekly/monthly Q\&A.
+\item Contextual word-level and grammar explanations appear directly within the reading interface, supporting comprehension without leaving the page.
+\end{itemize}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.45\linewidth]{demo_interface_final.png}
+\caption{Dual-panel learning interface showing S\=utra content (left) with Devanagari, transliteration, translation, and commentary, alongside contextual grammar references (right).}
+\label{fig:demo}
+\end{figure}
+
+The demo is publicly accessible at \url{https://ashta-padi.com/}. Additional implementation details and documentation are available in the public GitHub repository at \url{https://github.com/DivyanganaKothari/Ashta-Padi}.
+
+\section{Conclusion}
+\textit{Ashta-Padi} demonstrates how profession-based personalization supports accessible Sanskrit learning while preserving traditional rigor. The demo validates Steps~1--3, showing how computational interfaces complement established pedagogical models. Future work includes implementing Steps~4--8, integrating mentor workflows, expanding scripture coverage, and connecting with university systems.
+
+\bibliographystyle{acl}
+\bibliography{iscls}
+
+\end{document}
