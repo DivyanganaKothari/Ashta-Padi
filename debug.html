@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Debug Test</title>
+</head>
+
+<body>
+    <h1>Data Loading Test</h1>
+    <div id="output"></div>
+
+    <script>
+        async function testLoad() {
+            try {
+                const response = await fetch('yoga_sutras_demo_data.json');
+                const data = await response.json();
+
+                const output = document.getElementById('output');
+                output.innerHTML = `
+                    <h2>Sutra Data:</h2>
+                    <p>Sutras loaded: ${data.sutras ? data.sutras.length : 'NONE'}</p>
+                    
+                    <h2>Vocabulary Pre-learning:</h2>
+                    <p>Terms loaded: ${data.vocabulary_prelearning ? data.vocabulary_prelearning.length : 'NONE'}</p>
+                    ${data.vocabulary_prelearning ? `
+                        <h3>First term:</h3>
+                        <pre>${JSON.stringify(data.vocabulary_prelearning[0], null, 2)}</pre>
+                    ` : ''}
+                    
+                    <h2>Full Data:</h2>
+                    <pre>${JSON.stringify(data, null, 2).substring(0, 1000)}...</pre>
+                `;
+            } catch (error) {
+                document.getElementById('output').innerHTML = `
+                    <h2 style="color: red;">ERROR:</h2>
+                    <pre>${error.message}\n${error.stack}</pre>
+                `;
+            }
+        }
+
+        testLoad();
+    </script>
+</body>
+
+</html>

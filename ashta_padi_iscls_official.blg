@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: ashta_padi_iscls_official.aux
+Reallocating 'name_of_file' (item size: 1) to 4 items.
+The style file: acl.bst
+Reallocating 'name_of_file' (item size: 1) to 6 items.
+Database file #1: iscls.bib
+You've used 2 entries,
+            2490 wiz_defined-function locations,
+            564 strings with 4819 characters,
+and the built_in function-call counts, 991 in all, are:
+= -- 105
+> -- 20
+< -- 2
++ -- 6
+- -- 6
+* -- 58
+:= -- 145
+add.period$ -- 8
+call.type$ -- 2
+change.case$ -- 11
+chr.to.int$ -- 2
+cite$ -- 2
+duplicate$ -- 52
+empty$ -- 88
+format.name$ -- 9
+if$ -- 224
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 2
+newline$ -- 15
+num.names$ -- 6
+pop$ -- 17
+preamble$ -- 1
+purify$ -- 13
+quote$ -- 0
+skip$ -- 46
+stack$ -- 0
+substring$ -- 66
+swap$ -- 22
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 16
+warning$ -- 0
+while$ -- 10
+width$ -- 4
+write$ -- 30

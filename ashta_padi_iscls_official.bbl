@@ -1,0 +1,17 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\citename{Goyal and Huet}2012]{goyal2012sanskrit}
+Pawan Goyal and G{\'e}rard Huet.
+\newblock 2012.
+\newblock Design and analysis of a lean interface for {S}anskrit corpus
+  annotation.
+\newblock In {\em Proceedings of COLING 2012: Posters}, pages 177--186.
+
+\bibitem[\protect\citename{Huet}2003]{huet2003zen}
+G{\'e}rard Huet.
+\newblock 2003.
+\newblock Towards computational processing of {S}anskrit.
+\newblock In {\em International Conference on Natural Language Processing
+  (ICON)}, pages 40--69.
+
+\end{thebibliography}

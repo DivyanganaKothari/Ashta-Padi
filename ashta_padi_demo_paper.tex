@@ -1,0 +1,153 @@
+%
+% Ashta Padi Demo Paper for ISCLS 2026
+%
+% Demonstration submission (2 pages max)
+%
+
+\documentclass[11pt]{article}
+\usepackage{scl}
+\usepackage{times}
+\usepackage{url}
+\usepackage{latexsym}
+\usepackage{graphicx}
+
+% Devanagari support - try multiple fonts for compatibility
+\usepackage{fontspec, xunicode, xltxtra}
+% Try Noto Sans Devanagari first (most common), then Mangal, then fallback to system default
+\IfFontExistsTF{Noto Sans Devanagari}{
+  \newfontfamily\skt[Script=Devanagari]{Noto Sans Devanagari}
+}{
+  \IfFontExistsTF{Mangal}{
+    \newfontfamily\skt[Script=Devanagari]{Mangal}
+  }{
+    \IfFontExistsTF{Devanagari MT}{
+      \newfontfamily\skt[Script=Devanagari]{Devanagari MT}
+    }{
+      % If no Devanagari font found, use a placeholder
+      \newfontfamily\skt{Arial}
+    }
+  }
+}
+
+\title{Ashta Padi: A Profession-Based Interactive Platform for \\Yoga Sutras Learning}
+
+\author{Divya Sharma \\
+  [Your Institution] \\
+  [Your Address] \\
+  {\tt [your-email@domain]} \\}
+
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We present \textit{Ashta Padi} ({\skt अष्टपदी}, ``Eight Steps''), a novel web-based platform for learning Patanjali's Yoga Sutras through profession-based personalization. Unlike traditional scripture learning approaches, our system adapts content presentation based on the learner's professional background (yoga practitioner, wellness coach, philosopher, or psychologist), providing contextually relevant interpretations. The platform features expert-curated word-by-word grammatical analysis, interactive vocabulary building, sandhi rule tutorials, and adaptive quizzes. Our demonstration showcases five sutras from the Samadhi Pada with complete philological annotations, illustrating how computational tools can bridge classical Sanskrit scholarship with modern pedagogical needs. The system is designed to scale to all 196 Yoga Sutras and potentially other Sanskrit scriptures.
+\end{abstract}
+
+\section{Introduction}
+
+The Yoga Sutras of Patanjali ({\skt योगसूत्राणि}) remain one of the most influential Sanskrit texts, yet their accessibility to modern learners is limited by linguistic barriers and the need for extensive grammatical knowledge. While digital Sanskrit resources exist~\cite{huet2003zen,goyal2012sanskrit}, few address the pedagogical challenge of personalized learning pathways for diverse professional audiences.
+
+We introduce \textit{Ashta Padi}, an eight-step pedagogical model that combines profession-based content curation with interactive philological analysis. The name references both the traditional eight-limbed path ({\skt अष्टाङ्ग}) of Patanjali's yoga and our eight-stage learning framework.
+
+\section{The Ashta Padi Model}
+
+Our pedagogical framework consists of eight interconnected stages (Figure~\ref{fig:model}):
+
+\begin{enumerate}
+\item \textbf{Profession-Based Personalization}: Users select their professional context (yoga practitioner, wellness professional, philosophy scholar, or psychologist), which determines content emphasis and commentary style.
+
+\item \textbf{Curated Scripture Selection}: Based on user profile, the system recommends relevant sutras. For example, yoga practitioners begin with foundational sutras on practice ({\skt अभ्यास}, \textit{abhyāsa}), while psychologists focus on mind-related concepts ({\skt चित्त}, \textit{citta}).
+
+\item \textbf{Word-by-Word Analysis}: Each sutra is decomposed into constituent words with morphological analysis, showing root forms, grammatical cases, and sandhi applications.
+
+\item \textbf{Vocabulary Building}: Key terms are presented with etymological roots, multiple contextual meanings, and cross-references to other sutras.
+
+\item \textbf{Grammar Lessons}: Interactive tutorials explain sandhi rules (vowel/consonant combinations) and compound formations ({\skt समास}, \textit{samāsa}) with examples from the current sutra.
+
+\item \textbf{Contextual Commentary}: Expert annotations provide philosophical interpretations tailored to the user's profession, citing traditional commentaries (Vyasa, Bhoja Raja).
+
+\item \textbf{Practice \& Quizzes}: Interactive exercises test comprehension of vocabulary, grammar rules, and conceptual understanding.
+
+\item \textbf{Progress Tracking}: Adaptive learning algorithms track user performance and adjust difficulty levels, recommending review of challenging concepts.
+\end{enumerate}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.48\textwidth]{ashta_padi_model_1769080141861.png}
+\caption{The Ashta Padi eight-step pedagogical model for Sanskrit scripture learning.}
+\label{fig:model}
+\end{figure}
+
+\section{System Architecture}
+
+The current prototype is implemented as a responsive web application using HTML5, CSS3, and vanilla JavaScript, with data stored in structured JSON format. The architecture supports:
+
+\textbf{Annotation Schema}: Each sutra includes Devanagari text ({\skt अथ योगानुशासनम्}), IAST transliteration (\textit{atha yogānuśāsanam}), translation, and word-level grammatical metadata (root, part of speech, case, number).
+
+\textbf{Modular Design}: Vocabulary and grammar lessons are independent modules that can be reused across sutras, enabling efficient content scaling.
+
+\textbf{Interactive UI}: The interface features collapsible sections, modal dialogs for deep dives into grammar/vocabulary, and visual progress indicators.
+
+\section{Demonstration Content}
+
+Our demo includes five sutras from the Samadhi Pada (1.1--1.5), covering foundational concepts:
+
+\begin{itemize}
+\item {\skt अथ योगानुशासनम्} (1.1): ``Now, the teaching of Yoga begins''
+\item {\skt योगश्चित्तवृत्तिनिरोधः} (1.2): ``Yoga is the cessation of mental fluctuations''
+\item {\skt तदा द्रष्टुः स्वरूपेऽवस्थानम्} (1.3): ``Then the seer abides in its true nature''
+\item {\skt वृत्तिसारूप्यमितरत्र} (1.4): ``Otherwise, identification with mental patterns''
+\item {\skt वृत्तयः पञ्चतय्यः क्लिष्टाक्लिष्टाः} (1.5): ``Mental patterns are fivefold, afflicted or non-afflicted''
+\end{itemize}
+
+Each sutra includes 15--20 annotated vocabulary terms and 2--3 grammar lessons. The vocabulary for sutra 1.2, for example, includes:
+\begin{itemize}
+\item {\skt योग} (\textit{yoga}): union, discipline, practice (root: {\skt युज्}, \textit{yuj}, ``to join'')
+\item {\skt चित्त} (\textit{citta}): mind-field, consciousness (root: {\skt चित्}, \textit{cit}, ``to perceive'')
+\item {\skt वृत्ति} (\textit{vṛtti}): fluctuation, modification (root: {\skt वृत्}, \textit{vṛt}, ``to turn'')
+\item {\skt निरोध} (\textit{nirodha}): cessation, restraint ({\skt नि} + {\skt रुध्}, ``to obstruct'')
+\end{itemize}
+
+Grammar lessons demonstrate sandhi rules with interactive quizzes. For instance, the combination {\skt योग} + {\skt अनुशासनम्} = {\skt योगानुशासनम्} illustrates the \textit{a} + \textit{a} → \textit{ā} vowel sandhi rule.
+
+\section{Expert Curation \& Future Work}
+
+The annotations are being developed in collaboration with a Sanskrit Acharya (scholar) to ensure philological accuracy and traditional commentary integration. Future work includes:
+
+\begin{itemize}
+\item \textbf{Complete Dataset}: Expanding to all 196 Yoga Sutras with full annotations
+\item \textbf{ML-Powered Adaptation}: Implementing adaptive learning algorithms to personalize difficulty and content sequencing
+\item \textbf{Comparative Commentaries}: Integrating multiple traditional commentaries (Vyasa, Vacaspati Misra, Bhoja Raja) with toggle functionality
+\item \textbf{Cross-Scripture Extension}: Applying the Ashta Padi model to other texts (Bhagavad Gita, Upanishads)
+\item \textbf{Mobile Application}: Developing native iOS/Android apps for offline learning
+\item \textbf{Community Features}: Adding discussion forums and peer learning capabilities
+\end{itemize}
+
+\section{Conclusion}
+
+\textit{Ashta Padi} demonstrates how profession-based personalization and interactive philological tools can make Sanskrit scriptures more accessible to modern learners. By combining expert curation with computational affordances, we aim to preserve traditional scholarship while meeting contemporary pedagogical needs. The demo is available at: \url{[your-demo-url]}.
+
+\section*{Acknowledgements}
+
+We thank [Acharya Name] for Sanskrit expertise and philological annotations, and the ISCLS community for feedback on this work.
+
+\bibliographystyle{acl}
+\begin{thebibliography}{}
+
+\bibitem[\protect\citename{Goyal and Huet}2012]{goyal2012sanskrit}
+Pawan Goyal and G{\'e}rard Huet.
+\newblock 2012.
+\newblock Design and analysis of a lean interface for Sanskrit corpus annotation.
+\newblock In \textit{Proceedings of COLING 2012: Posters}, pages 177--186.
+
+\bibitem[\protect\citename{Huet}2003]{huet2003zen}
+G{\'e}rard Huet.
+\newblock 2003.
+\newblock Towards computational processing of Sanskrit.
+\newblock In \textit{International Conference on Natural Language Processing (ICON)}, pages 40--69.
+
+\end{thebibliography}
+
+\end{document}

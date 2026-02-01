@@ -1,292 +1,224 @@
-# Ashta Padi - Sanskrit Scripture Learning Platform
+# Ashta Padi — संस्कृतं च शास्त्राणि
 
-## 🎯 Overview
+<p align="center">
+  <img src="src/assets/logo.png" alt="Ashta Padi Logo" width="120" />
+</p>
 
-**Ashta Padi** (अष्टपदी - "Eight Steps") is a comprehensive university-integrated learning framework for **Sanskrit scriptures** that combines profession-based personalization with formal certification pathways. 
-
-**The framework is scripture-agnostic**—it works with any Sanskrit text (Bhagavad Gita, Upanishads, Brahma Sutras, Arthashastra, etc.). **This demo uses Patanjali's Yoga Sutras as an exemplar** due to its relevance across multiple professions and rich grammatical content.
-
-**Demo for:** ISCLS 2026 (8th International Sanskrit Computational Linguistics Symposium)  
-**Submission Deadline:** January 31, 2026
-
----
-
-## 🌟 The Complete Ashta Padi Model
-
-The full 8-step framework provides a structured pathway from beginner to PhD-level Sanskrit scholarship:
-
-### **Step 1: Profession Selection**
-- Choose your professional domain (Economist, Yoga Practitioner, Wellness Coach, Philosopher, Psychologist)
-- Exploits cognitive anchoring - humans retain terminology relevant to their interests more effectively
-
-### **Step 2: Profession-Specific Glossary & Testing**
-- Sanskrit terms specific to your field (e.g., Arthashastra for economists)
-- Interactive assessments to build foundational domain knowledge
-
-### **Step 3: General Sanskrit Grammar & Certification**
-- Comprehensive grammar: sandhi, samāsa, declensions, conjugations
-- Proficiency tests leading to **Grammar Certification (Exit Point 1)**
-
-### **Step 4: Scripture Selection & Mentor Assignment** ⏳
-- System auto-selects 5 relevant scriptures (easy → difficult)
-- Mentor assignment: university professor or private Acharya
-- Offline examination option for Bachelor's degree credit
-
-### **Step 5: Scripture Structure & Translation** ⏳
-- Explanation of sutra vs. shloka formats
-- Native language translations
-- Master's-level study depth
-
-### **Step 6: Teacher-Guided Learning Path** ⏳
-- Live classes with Acharyas/professors
-- Recorded lecture series
-- PhD-track intensive study option
-
-### **Step 7: University-Integrated Certification** ⏳
-- **Certificate** (1 scripture, 6 months)
-- **Diploma** (2 scriptures, 1 year)
-- **Bachelor's Degree** (5 scriptures + university exams)
-- Integration with university platforms for transcript recording
-
-### **Step 8: Career & Research Pathways** ⏳
-- Employment opportunities (teaching, wellness, research)
-- Advanced course recommendations
-- Research program applications (Master's/PhD)
-
-**Legend:** ✅ Implemented in demo | ⏳ Designed, under development
+<p align="center">
+  <strong>A Scripture-Agnostic Framework for Sanskrit Learning</strong><br/>
+  Learn Sanskrit & Scriptures Through Your Profession
+</p>
 
 ---
 
-## ✨ Current Demo Features (Enhanced Version)
+## 📖 About
 
-### **1. Profession Selection**
-- Choose between Yoga Practitioner or Economist/Accountant
-- Personalized learning path based on profession
-- (Economist track marked as "Coming Soon" for demo)
+**Ashta Padi** (अष्टपदी) is an innovative, profession-based Sanskrit learning platform that makes ancient wisdom accessible to modern learners. The framework covers major scriptures including:
 
-### **2. Vocabulary Pre-Learning** ⭐ NEW
-- **6 key Sanskrit terms** presented as interactive flashcards
-- Learn vocabulary BEFORE encountering in sutras
-- Each term includes:
-  - Sanskrit (Devanagari) and IAST transliteration
-  - Root etymology (dhātu) and meaning
-  - Multiple contextual meanings
-  - Example usage from actual sutras
-- Progress tracking with visual dots
-- Sequential navigation through all terms
+- **Yoga Sūtras** of Patañjali
+- **Bhagavad Gītā**
+- **Arthaśāstra**
+- And more...
 
-### **3. Dual-Panel Sutra Learning Interface** ⭐ NEW
-**LEFT PANEL (Main Content):**
-- 5 sutras from Samadhi Pada (Chapter 1)
-- Sanskrit text in Devanagari with IAST transliteration
-- Word-by-word grammatical breakdown
-- Translation and commentary
-- Previous/Next navigation
+The platform follows a structured **8-step pedagogical roadmap** (Ashta Padi = Eight Steps) designed to guide learners from foundational concepts to advanced understanding.
 
-**RIGHT PANEL (Grammar Reference):**
-- Persistent grammar sidebar (always visible)
-- 5 collapsible grammar lessons:
-  1. Vyākaraṇa - The Science of Grammar
-  2. Varṇa - Sounds and Letters
-  3. Sandhi - Joining of Sounds
-  4. Pada - Word
-  5. Dhātu - Verb Root
-- Click to expand/collapse each lesson
-- Examples and explanations included
-- No context-switching needed!
+## 🎯 Key Features
 
-### **4. Practice Quiz** ⭐ NEW
-- **10 comprehensive questions** covering:
-  - Vocabulary (6 questions)
-  - Grammar concepts (4 questions)
-- Multiple choice format
-- Instant feedback with explanations
-- Final score display with encouraging message
-- Retake option available
+### For Students (Śiṣya)
+- **Profession-Based Learning**: Content personalized for Philosophers, Psychologists, Economists, Yoga Practitioners, and Wellness Experts
+- **Interactive Sūtra Panel**: Study verses with word-by-word analysis, grammar breakdowns, and contextual meanings
+- **AI-Powered Chatbot**: Get instant answers to Sanskrit and scripture-related questions
+- **Progress Tracking**: Monitor your learning journey with detailed analytics
+- **Vocabulary Cards**: Build your Sanskrit vocabulary with spaced repetition
+- **Quizzes & Assessments**: Test your understanding with interactive quizzes
 
-### **5. Progress Tracking**
-- Track sutras completed (0-5)
-- Monitor vocabulary learned (6 terms)
-- Visual progress indicators
-- Progress bar showing current position
+### For Teachers (Guru)
+- **Student Management**: Connect with and guide your śiṣyas
+- **Assessment Creation**: Create custom assessments for your students
+- **Publication Management**: Share your research, blogs, and teaching materials
+- **Connection Requests**: Accept or manage student connection requests
 
-### **6. Navigation & UX**
-- Smooth screen transitions
-- Back to Home button
-- Previous/Next buttons
-- Keyboard shortcuts (Arrow keys for sutras)
-- Responsive design (works on mobile)
-- Professional Sanskrit-inspired color scheme
+## 🛠️ Technology Stack
 
----
+- **Frontend**: React 18 + TypeScript + Vite
+- **Styling**: Tailwind CSS + shadcn/ui components
+- **State Management**: Zustand
+- **Backend**: Supabase
+- **Authentication**: Email-based auth with role management
+- **Animations**: Framer Motion
+- **Charts**: Recharts
 
-## 🚀 How to Run
+## 🚀 Getting Started
 
-### **Option 1: Use a Local Server (Recommended)**
+### Prerequisites
 
-**Using Python:**
+- Node.js 18+ and npm (or use [nvm](https://github.com/nvm-sh/nvm#installing-and-updating))
+
+### Installation
+
 ```bash
-# Python 3
-python -m http.server 8000
+# Clone the repository
+git clone <YOUR_GIT_URL>
 
-# Then open: http://localhost:8000
+# Navigate to project directory
+cd <YOUR_PROJECT_NAME>
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
 ```
 
-**Using Node.js:**
-```bash
-npx http-server -p 8000
-
-# Then open: http://localhost:8000
-```
-
-**Using VS Code:**
-- Install "Live Server" extension
-- Right-click `index.html` → "Open with Live Server"
-
-### **Option 2: Open Directly in Browser**
-1. Navigate to the project folder
-2. Double-click `index.html`
-3. The demo will open in your default browser
-   - **Note:** Some features may require a local server due to CORS restrictions
-
----
+The app will be available at `http://localhost:5173`
 
 ## 📁 Project Structure
 
 ```
-Ashta-Padi/
-├── index.html                          # Main HTML structure
-├── styles.css                          # Sanskrit-inspired design system
-├── app.js                              # Application logic and state management
-├── yoga_sutras_demo_data.json         # Sutra data, vocabulary, and grammar
-├── README.md                           # This file
-│
-├── ashta_padi_paper_simple.tex         # ISCLS 2026 paper (LaTeX)
-├── ashta_padi_paper_simple.pdf         # Compiled PDF
-├── complete_ashta_padi_model.png       # 8-step model diagram
-│
-└── scl.sty, acl.bst, iscls.bib        # ISCLS LaTeX template files
+src/
+├── assets/              # Images, mandalas, and static assets
+├── components/
+│   ├── screens/         # Main screen components
+│   ├── profile/         # Profile-related components
+│   ├── analytics/       # Learning analytics components
+│   └── ui/              # Reusable UI components (shadcn)
+├── contexts/            # React contexts (Auth, etc.)
+├── data/                # Static data (modules, grammar, sutras)
+├── hooks/               # Custom React hooks
+├── integrations/        # Backend integration
+├── pages/               # Route pages
+├── store/               # Zustand state management
+└── lib/                 # Utility functions
+supabase/
+└── functions/           # Edge functions (AI chat, etc.)
 ```
 
----
+## 🏗️ System Architecture
 
-## 🎨 Design Features
+The Ashta-Padi system architecture employs a modular, layered approach comprising four distinct layers:
 
-- **Sanskrit-Inspired Color Palette**: Warm tones (saffron, deep brown, gold) reminiscent of ancient manuscripts
-- **Devanagari Typography**: Noto Sans Devanagari font for authentic Sanskrit display
-- **Smooth Animations**: Fade-in transitions and hover effects
-- **Responsive Design**: Works on desktop, tablet, and mobile
-- **Accessible**: WCAG-compliant contrast ratios and readable fonts
-- **Modern UI/UX**: Glassmorphism effects, gradient backgrounds, micro-interactions
+### 1. Content Layer — TypeScript Data Modules
+The content layer is powered by **strongly-typed TypeScript modules** (not JSON) that provide structured Sanskrit educational content:
 
----
+- **`yogaSutrasData.ts`**: Maps Sanskrit sūtras to word-by-word breakdowns with morphological markers (vibhakti, sandhi splits, dhātu roots)
+- **`grammarModules.ts`**: Comprehensive 22-lesson Vyākaraṇa curriculum covering foundational grammar and scripture-specific analysis
+- **`modulesData.ts`**: Profession-specific learning modules with topic mappings and progression metadata
 
-## 📊 Data Structure
+This approach enables compile-time type safety and IntelliSense support for content authoring.
 
-The demo uses `yoga_sutras_demo_data.json` which contains:
+### 2. Pedagogy Layer — State-Driven Learning Engine
+The pedagogy layer implements a **gated progression engine** using Zustand for state management:
 
-### **Sutras Array**
-Each sutra includes:
-- `sanskrit`: Devanagari text
-- `transliteration`: IAST format
-- `word_breakdown`: Array of words with grammatical analysis
-- `translation`: English translation
-- `commentary`: Contextual explanation
-- `key_terms`: Related vocabulary
+```
+Profession Selection → Authentication → Module Selection → 
+Vocabulary (6 terms, all required) → Sūtra Study → Quiz (70% pass) → Mentor Selection
+```
 
-### **Vocabulary Array**
-Each term includes:
-- `term`: Sanskrit in Devanagari
-- `transliteration`: IAST
-- `meanings`: Array of contextual meanings
-- `root`: Dhātu (root) derivation
-- `part_of_speech`: Grammatical category
-- `related_terms`: Cross-references
+Key mechanisms:
+- **Progression gating**: Each stage must be completed before advancing
+- **Profession-based filtering**: Content dynamically filtered by selected profession (Philosopher, Psychologist, Economist, Yoga Practitioner, Wellness Expert)
+- **Completion tracking**: Granular tracking of vocabulary terms, sūtra progress, and quiz scores
+- **Pass/fail logic**: 70% threshold enforced before mentor access
 
-### **Grammar Lessons Array**
-Each lesson includes:
-- `title`: Lesson name
-- `concept`: Explanation
-- `examples`: Array with rules and demonstrations
-- `quiz`: Interactive questions with explanations
+### 3. Presentation Layer — Dual-Panel Learning Interface
+The interface layer provides a **synchronized, interactive learning environment**:
 
----
+- **Left Panel (Sūtra Panel)**: Word-by-word verse analysis with expandable morphological details
+- **Right Panel (Grammar Sidebar)**: Contextual Vyākaraṇa reference (22 lessons across 2 modules)
+- **Responsive Design**: Mobile-first approach with Tailwind CSS and Framer Motion animations
+- **Role-Based Dashboards**: Distinct interfaces for Guru (teacher) and Śiṣya (student)
 
+### 4. Backend Layer — Supabase Services
+The backend layer leverages **Supabase** for persistence and AI capabilities:
 
-## 🎓 Research Contributions
+- **Authentication**: Role-based auth (student/teacher) with profile management
+- **Database**: PostgreSQL with RLS policies for secure data access
+- **AI Integration**: Edge functions connecting to Google Gemini for the Sanskrit chatbot
+- **Connection System**: Teacher-student relationship management with request/approval workflow
 
-This project demonstrates:
+### Architecture Diagram
 
-1. **Profession-Based Personalization**: Novel approach using cognitive anchoring
-2. **University Integration**: Formal certification pathways (Certificate → PhD)
-3. **Mentor Matching**: Connection with university professors and traditional Acharyas
-4. **Progressive Credentialing**: Structured learning with exit points
-5. **Scalable Architecture**: Framework applicable to all Sanskrit scriptures
-6. **Traditional + Modern**: Preserves traditional scholarship while democratizing access
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    PRESENTATION LAYER                           │
+│  ┌─────────────────┐  ┌─────────────────┐  ┌────────────────┐  │
+│  │   Sūtra Panel   │  │ Grammar Sidebar │  │   Dashboards   │  │
+│  │  (Word Analysis)│  │  (Vyākaraṇa)    │  │ (Guru/Śiṣya)   │  │
+│  └────────┬────────┘  └────────┬────────┘  └───────┬────────┘  │
+└───────────┼────────────────────┼───────────────────┼────────────┘
+            │                    │                   │
+┌───────────┴────────────────────┴───────────────────┴────────────┐
+│                     PEDAGOGY LAYER                              │
+│  ┌──────────────────────────────────────────────────────────┐  │
+│  │              Zustand Learning Store                       │  │
+│  │  • Gated Progression Engine (Auth → Vocab → Quiz → ...)  │  │
+│  │  • Profession-Based Content Filtering                     │  │
+│  │  • Score Calculation & Pass/Fail Logic                    │  │
+│  └──────────────────────────────────────────────────────────┘  │
+└─────────────────────────────────────────────────────────────────┘
+            │                    │                   │
+┌───────────┴────────────────────┴───────────────────┴────────────┐
+│                      CONTENT LAYER                              │
+│  ┌─────────────────┐  ┌─────────────────┐  ┌────────────────┐  │
+│  │ yogaSutrasData  │  │ grammarModules  │  │  modulesData   │  │
+│  │ (Sūtra + Padāni)│  │ (Vyākaraṇa 22L) │  │ (Profession)   │  │
+│  └─────────────────┘  └─────────────────┘  └────────────────┘  │
+└─────────────────────────────────────────────────────────────────┘
+            │                    │                   │
+┌───────────┴────────────────────┴───────────────────┴────────────┐
+│                      BACKEND LAYER                              │
+│  ┌─────────────────┐  ┌─────────────────┐  ┌────────────────┐  │
+│  │  Authentication │  │    Database     │  │ Edge Functions │  │
+│  │  (Role-based)   │  │ (PostgreSQL+RLS)│  │  (AI Chatbot)  │  │
+│  └─────────────────┘  └─────────────────┘  └────────────────┘  │
+│                        Supabase                                 │
+└─────────────────────────────────────────────────────────────────┘
+```
 
----
+## 🎨 Design System
 
-## 📝 Technical Stack for Demo
+The UI follows a professional editorial aesthetic with:
+- Sanskrit-inspired typography using custom Devanagari fonts
+- Elegant mandala decorative elements
+- Warm, scholarly color palette
+- Light/dark mode support
 
-- **Frontend**: HTML5, CSS3, JavaScript (Vanilla)
-- **Fonts**: Google Fonts (Inter, Noto Sans Devanagari)
-- **Data Format**: JSON
-- **Paper**: LaTeX with ISCLS template
-- **No Dependencies**: Pure vanilla JavaScript for maximum compatibility
+## 📚 The Ashta Padi Framework
 
----
+The 8-step learning methodology:
+1. **Introduction** — Overview of the scripture
+2. **Context** — Historical and philosophical background
+3. **Vocabulary** — Key Sanskrit terms
+4. **Grammar** — Sandhi, Samasa, and linguistic analysis
+5. **Translation** — Word-by-word and contextual meaning
+6. **Commentary** — Traditional and modern interpretations
+7. **Application** — Practical relevance to your profession
+8. **Assessment** — Test your understanding
 
-## 📄 ISCLS 2026 Submission
+## 🔬 Research Credits
 
-### **Paper Files**
-- `ashta_padi_paper_simple.tex` - LaTeX source
-- `ashta_padi_paper_simple.pdf` - Compiled PDF (currently 4 pages, needs trimming to 2)
-- `complete_ashta_padi_model.png` - 8-step model diagram
+This project is a submission for **ISCLS 2026** by:
 
-### **Key Points**
-- **Track**: Demonstrations
-- **Page Limit**: 2 pages
-- **Deadline**: January 31, 2026 (AoE)
-- **Submission Portal**: https://cmt3.research.microsoft.com/ISCLS2026
+- Bhagyashree Joshi Vyasa
+- Bijoy Laxmi Biswas
+- Divyangana Kothari
+- Aarti Panwar
 
----
+**Affiliated Institutions:**
+- Satyam Sadhana Kutir Ashram
+- Uttarakhand Sanskrit University
 
-## 👥 Credits
+## 🤝 Contributing
 
-**Developed by:**
-- Dr. Bhagyashree Joshi Vyasa - Sanskrit Content & Philological Annotations
-- Divyangana Kothari - System Architecture & Development
-- Bijay Laxmi Biswas - System Architecture & Development
-- Aarti Panwar - Researcher
-
-
-**For:** ISCLS 2026 Demo Submission
-
----
-
-## 📧 Contact
-
-For questions or feedback:
-- Email: divikot.de@gmail.com
-- Conference: iscls@outlook.com
-
----
-
-## 🙏 Acknowledgments
-
-- Patanjali for the timeless Yoga Sutras
-- ISCLS organizing committee
-- Sanskrit scholars and educators who preserve this knowledge
-- University partners for certification integration (planned)
-
----
+We welcome contributions! Please feel free to submit issues and pull requests.
 
 ## 📄 License
 
-This demo is created for educational and research purposes as part of the ISCLS 2026 submission.
+This project is part of academic research. Please contact the authors for usage permissions.
 
 ---
 
-**Built with dedication to making Sanskrit accessible to all through structured, credentialed learning pathways.** 🕉️
-
-**Ashta Padi**: Eight steps from beginner to scholar, from curiosity to credential.
+<p align="center">
+  <em>गुरुर्ब्रह्मा गुरुर्विष्णुः गुरुर्देवो महेश्वरः</em><br/>
+  <small>The Guru is Brahma, Vishnu, and Maheswara</small>
+</p>

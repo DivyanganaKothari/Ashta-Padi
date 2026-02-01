@@ -1,0 +1,649 @@
+export type Json =
+  | string
+  | number
+  | boolean
+  | null
+  | { [key: string]: Json | undefined }
+  | Json[]
+
+export type Database = {
+  // Allows to automatically instantiate createClient with right options
+  // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
+  __InternalSupabase: {
+    PostgrestVersion: "14.1"
+  }
+  public: {
+    Tables: {
+      assessment_assignments: {
+        Row: {
+          assessment_id: string
+          assigned_at: string
+          completed_at: string | null
+          due_date: string | null
+          id: string
+          max_score: number | null
+          score: number | null
+          student_id: string
+        }
+        Insert: {
+          assessment_id: string
+          assigned_at?: string
+          completed_at?: string | null
+          due_date?: string | null
+          id?: string
+          max_score?: number | null
+          score?: number | null
+          student_id: string
+        }
+        Update: {
+          assessment_id?: string
+          assigned_at?: string
+          completed_at?: string | null
+          due_date?: string | null
+          id?: string
+          max_score?: number | null
+          score?: number | null
+          student_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "assessment_assignments_assessment_id_fkey"
+            columns: ["assessment_id"]
+            isOneToOne: false
+            referencedRelation: "assessments"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      assessment_questions: {
+        Row: {
+          assessment_id: string
+          correct_answer: string
+          created_at: string
+          explanation: string | null
+          id: string
+          options: Json
+          order_index: number
+          question_text: string
+          question_type: string
+        }
+        Insert: {
+          assessment_id: string
+          correct_answer: string
+          created_at?: string
+          explanation?: string | null
+          id?: string
+          options?: Json
+          order_index?: number
+          question_text: string
+          question_type?: string
+        }
+        Update: {
+          assessment_id?: string
+          correct_answer?: string
+          created_at?: string
+          explanation?: string | null
+          id?: string
+          options?: Json
+          order_index?: number
+          question_text?: string
+          question_type?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "assessment_questions_assessment_id_fkey"
+            columns: ["assessment_id"]
+            isOneToOne: false
+            referencedRelation: "assessments"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      assessments: {
+        Row: {
+          assessment_type: string
+          created_at: string
+          description: string | null
+          id: string
+          is_published: boolean
+          teacher_id: string
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          assessment_type?: string
+          created_at?: string
+          description?: string | null
+          id?: string
+          is_published?: boolean
+          teacher_id: string
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          assessment_type?: string
+          created_at?: string
+          description?: string | null
+          id?: string
+          is_published?: boolean
+          teacher_id?: string
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      connection_requests: {
+        Row: {
+          created_at: string
+          id: string
+          message: string | null
+          status: string
+          student_id: string
+          teacher_id: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          message?: string | null
+          status?: string
+          student_id: string
+          teacher_id: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          message?: string | null
+          status?: string
+          student_id?: string
+          teacher_id?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          bio: string | null
+          created_at: string
+          department: string | null
+          full_name: string | null
+          id: string
+          linkedin_url: string | null
+          university: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          avatar_url?: string | null
+          bio?: string | null
+          created_at?: string
+          department?: string | null
+          full_name?: string | null
+          id?: string
+          linkedin_url?: string | null
+          university?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          avatar_url?: string | null
+          bio?: string | null
+          created_at?: string
+          department?: string | null
+          full_name?: string | null
+          id?: string
+          linkedin_url?: string | null
+          university?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      publications: {
+        Row: {
+          created_at: string
+          description: string | null
+          id: string
+          publication_type: string
+          published_year: number | null
+          teacher_id: string
+          title: string
+          url: string | null
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          publication_type: string
+          published_year?: number | null
+          teacher_id: string
+          title: string
+          url?: string | null
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          publication_type?: string
+          published_year?: number | null
+          teacher_id?: string
+          title?: string
+          url?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "publications_teacher_id_fkey"
+            columns: ["teacher_id"]
+            isOneToOne: false
+            referencedRelation: "teacher_profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "publications_teacher_id_fkey"
+            columns: ["teacher_id"]
+            isOneToOne: false
+            referencedRelation: "teacher_profiles_public"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      student_profiles: {
+        Row: {
+          academic_level: string | null
+          created_at: string
+          id: string
+          interests: string[] | null
+          qualifications: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          academic_level?: string | null
+          created_at?: string
+          id?: string
+          interests?: string[] | null
+          qualifications?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          academic_level?: string | null
+          created_at?: string
+          id?: string
+          interests?: string[] | null
+          qualifications?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      teacher_blogs: {
+        Row: {
+          content: string
+          created_at: string
+          id: string
+          teacher_id: string
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          content: string
+          created_at?: string
+          id?: string
+          teacher_id: string
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          content?: string
+          created_at?: string
+          id?: string
+          teacher_id?: string
+          title?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "teacher_blogs_teacher_id_fkey"
+            columns: ["teacher_id"]
+            isOneToOne: false
+            referencedRelation: "teacher_profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "teacher_blogs_teacher_id_fkey"
+            columns: ["teacher_id"]
+            isOneToOne: false
+            referencedRelation: "teacher_profiles_public"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      teacher_profiles: {
+        Row: {
+          created_at: string
+          degree: string | null
+          faculty_type: Database["public"]["Enums"]["faculty_type"]
+          gmeet_link: string | null
+          id: string
+          updated_at: string
+          user_id: string
+          zoom_link: string | null
+        }
+        Insert: {
+          created_at?: string
+          degree?: string | null
+          faculty_type?: Database["public"]["Enums"]["faculty_type"]
+          gmeet_link?: string | null
+          id?: string
+          updated_at?: string
+          user_id: string
+          zoom_link?: string | null
+        }
+        Update: {
+          created_at?: string
+          degree?: string | null
+          faculty_type?: Database["public"]["Enums"]["faculty_type"]
+          gmeet_link?: string | null
+          id?: string
+          updated_at?: string
+          user_id?: string
+          zoom_link?: string | null
+        }
+        Relationships: []
+      }
+      user_activity: {
+        Row: {
+          activity_count: number
+          activity_date: string
+          activity_type: string
+          created_at: string
+          id: string
+          user_id: string
+        }
+        Insert: {
+          activity_count?: number
+          activity_date?: string
+          activity_type: string
+          created_at?: string
+          id?: string
+          user_id: string
+        }
+        Update: {
+          activity_count?: number
+          activity_date?: string
+          activity_type?: string
+          created_at?: string
+          id?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      user_progress: {
+        Row: {
+          completed_vocab_terms: number[]
+          created_at: string
+          current_sutra_index: number
+          current_vocab_index: number
+          id: string
+          quiz_answers: Json
+          quiz_score: number | null
+          selected_module: string | null
+          selected_profession: string | null
+          sutras_completed: number
+          updated_at: string
+          user_id: string
+          vocab_completed: boolean
+        }
+        Insert: {
+          completed_vocab_terms?: number[]
+          created_at?: string
+          current_sutra_index?: number
+          current_vocab_index?: number
+          id?: string
+          quiz_answers?: Json
+          quiz_score?: number | null
+          selected_module?: string | null
+          selected_profession?: string | null
+          sutras_completed?: number
+          updated_at?: string
+          user_id: string
+          vocab_completed?: boolean
+        }
+        Update: {
+          completed_vocab_terms?: number[]
+          created_at?: string
+          current_sutra_index?: number
+          current_vocab_index?: number
+          id?: string
+          quiz_answers?: Json
+          quiz_score?: number | null
+          selected_module?: string | null
+          selected_profession?: string | null
+          sutras_completed?: number
+          updated_at?: string
+          user_id?: string
+          vocab_completed?: boolean
+        }
+        Relationships: []
+      }
+      user_roles: {
+        Row: {
+          created_at: string
+          id: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id?: string
+        }
+        Relationships: []
+      }
+    }
+    Views: {
+      teacher_profiles_public: {
+        Row: {
+          created_at: string | null
+          degree: string | null
+          faculty_type: Database["public"]["Enums"]["faculty_type"] | null
+          id: string | null
+          updated_at: string | null
+          user_id: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          degree?: string | null
+          faculty_type?: Database["public"]["Enums"]["faculty_type"] | null
+          id?: string | null
+          updated_at?: string | null
+          user_id?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          degree?: string | null
+          faculty_type?: Database["public"]["Enums"]["faculty_type"] | null
+          id?: string | null
+          updated_at?: string | null
+          user_id?: string | null
+        }
+        Relationships: []
+      }
+    }
+    Functions: {
+      get_student_assessment_questions: {
+        Args: { p_assignment_id: string }
+        Returns: {
+          assessment_id: string
+          id: string
+          options: Json
+          order_index: number
+          question_text: string
+          question_type: string
+        }[]
+      }
+      get_user_role: {
+        Args: { _user_id: string }
+        Returns: Database["public"]["Enums"]["app_role"]
+      }
+      has_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["app_role"]
+          _user_id: string
+        }
+        Returns: boolean
+      }
+      log_user_activity: {
+        Args: { p_activity_type: string }
+        Returns: undefined
+      }
+      submit_assessment_answers: {
+        Args: { p_answers: Json; p_assignment_id: string }
+        Returns: Json
+      }
+    }
+    Enums: {
+      app_role: "student" | "teacher"
+      faculty_type: "permanent" | "visiting"
+    }
+    CompositeTypes: {
+      [_ in never]: never
+    }
+  }
+}
+
+type DatabaseWithoutInternals = Omit<Database, "__InternalSupabase">
+
+type DefaultSchema = DatabaseWithoutInternals[Extract<keyof Database, "public">]
+
+export type Tables<
+  DefaultSchemaTableNameOrOptions extends
+    | keyof (DefaultSchema["Tables"] & DefaultSchema["Views"])
+    | { schema: keyof DatabaseWithoutInternals },
+  TableName extends DefaultSchemaTableNameOrOptions extends {
+    schema: keyof DatabaseWithoutInternals
+  }
+    ? keyof (DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"] &
+        DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Views"])
+    : never = never,
+> = DefaultSchemaTableNameOrOptions extends {
+  schema: keyof DatabaseWithoutInternals
+}
+  ? (DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"] &
+      DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Views"])[TableName] extends {
+      Row: infer R
+    }
+    ? R
+    : never
+  : DefaultSchemaTableNameOrOptions extends keyof (DefaultSchema["Tables"] &
+        DefaultSchema["Views"])
+    ? (DefaultSchema["Tables"] &
+        DefaultSchema["Views"])[DefaultSchemaTableNameOrOptions] extends {
+        Row: infer R
+      }
+      ? R
+      : never
+    : never
+
+export type TablesInsert<
+  DefaultSchemaTableNameOrOptions extends
+    | keyof DefaultSchema["Tables"]
+    | { schema: keyof DatabaseWithoutInternals },
+  TableName extends DefaultSchemaTableNameOrOptions extends {
+    schema: keyof DatabaseWithoutInternals
+  }
+    ? keyof DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"]
+    : never = never,
+> = DefaultSchemaTableNameOrOptions extends {
+  schema: keyof DatabaseWithoutInternals
+}
+  ? DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"][TableName] extends {
+      Insert: infer I
+    }
+    ? I
+    : never
+  : DefaultSchemaTableNameOrOptions extends keyof DefaultSchema["Tables"]
+    ? DefaultSchema["Tables"][DefaultSchemaTableNameOrOptions] extends {
+        Insert: infer I
+      }
+      ? I
+      : never
+    : never
+
+export type TablesUpdate<
+  DefaultSchemaTableNameOrOptions extends
+    | keyof DefaultSchema["Tables"]
+    | { schema: keyof DatabaseWithoutInternals },
+  TableName extends DefaultSchemaTableNameOrOptions extends {
+    schema: keyof DatabaseWithoutInternals
+  }
+    ? keyof DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"]
+    : never = never,
+> = DefaultSchemaTableNameOrOptions extends {
+  schema: keyof DatabaseWithoutInternals
+}
+  ? DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"][TableName] extends {
+      Update: infer U
+    }
+    ? U
+    : never
+  : DefaultSchemaTableNameOrOptions extends keyof DefaultSchema["Tables"]
+    ? DefaultSchema["Tables"][DefaultSchemaTableNameOrOptions] extends {
+        Update: infer U
+      }
+      ? U
+      : never
+    : never
+
+export type Enums<
+  DefaultSchemaEnumNameOrOptions extends
+    | keyof DefaultSchema["Enums"]
+    | { schema: keyof DatabaseWithoutInternals },
+  EnumName extends DefaultSchemaEnumNameOrOptions extends {
+    schema: keyof DatabaseWithoutInternals
+  }
+    ? keyof DatabaseWithoutInternals[DefaultSchemaEnumNameOrOptions["schema"]]["Enums"]
+    : never = never,
+> = DefaultSchemaEnumNameOrOptions extends {
+  schema: keyof DatabaseWithoutInternals
+}
+  ? DatabaseWithoutInternals[DefaultSchemaEnumNameOrOptions["schema"]]["Enums"][EnumName]
+  : DefaultSchemaEnumNameOrOptions extends keyof DefaultSchema["Enums"]
+    ? DefaultSchema["Enums"][DefaultSchemaEnumNameOrOptions]
+    : never
+
+export type CompositeTypes<
+  PublicCompositeTypeNameOrOptions extends
+    | keyof DefaultSchema["CompositeTypes"]
+    | { schema: keyof DatabaseWithoutInternals },
+  CompositeTypeName extends PublicCompositeTypeNameOrOptions extends {
+    schema: keyof DatabaseWithoutInternals
+  }
+    ? keyof DatabaseWithoutInternals[PublicCompositeTypeNameOrOptions["schema"]]["CompositeTypes"]
+    : never = never,
+> = PublicCompositeTypeNameOrOptions extends {
+  schema: keyof DatabaseWithoutInternals
+}
+  ? DatabaseWithoutInternals[PublicCompositeTypeNameOrOptions["schema"]]["CompositeTypes"][CompositeTypeName]
+  : PublicCompositeTypeNameOrOptions extends keyof DefaultSchema["CompositeTypes"]
+    ? DefaultSchema["CompositeTypes"][PublicCompositeTypeNameOrOptions]
+    : never
+
+export const Constants = {
+  public: {
+    Enums: {
+      app_role: ["student", "teacher"],
+      faculty_type: ["permanent", "visiting"],
+    },
+  },
+} as const
